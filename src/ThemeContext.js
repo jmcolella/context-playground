@@ -24,7 +24,7 @@ const useThemeContext = () => {
 };
 
 function ThemeContextProvider(props) {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(props.theme);
 
   const value = useMemo(() => ({
     theme,
@@ -35,6 +35,10 @@ function ThemeContextProvider(props) {
     <ThemeContext.Provider value={value} {...props} />
   );
 }
+
+ThemeContextProvider.defaultProps = {
+  theme: 'light'
+};
 
 export { ThemeContextProvider, useThemeContext };
 

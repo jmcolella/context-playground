@@ -21,7 +21,8 @@ function Display(props) {
 
   return (
     <StyledDisplay theme={theme}>
-      <Value {...props} />
+
+      <Value />
 
       <Button>
         Toggle Theme
